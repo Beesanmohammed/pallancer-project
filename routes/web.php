@@ -67,20 +67,24 @@ Route::group([
 
     //'middleware'=>['auth','checkuser:user']
   
+
 ],function(){
-    Route::get('/blog','FrontController@blog')->name('blog');
-    Route::get('/aboutus','FrontController@aboutus')->name('aboutus');
+    Route::get('/index','FrontController@index')->name('index');
+    Route::get('/create','FrontController@create')->name('create');
     Route::get('/bookDiscription/{id}','FrontController@bookDiscription')->name('bookDiscription');
 
     Route::get('/contact','FrontController@contact')->name('contact');
     Route::post('/send','FrontController@send')->name('send');
-    
+    Route::get('/blog','  FrontController@blog')->name('blog');
+
+    Route::get('/aboutus','FrontController@aboutus')->name('aboutus');
+    Route::get('/usercontact','FrontController@usercontact')->name('usercontact');
+    Route::get('/storebook','FrontController@storebook')->name('storebook');
+    Route::post('/storebook','FrontController@storebook')->name('storebook');
 
 
 
-    Route::get('/index','FrontController@index')->name('index');
     Route::get('/create','FrontController@create')->name('create');
-    Route::post('/store','FrontController@store')->name('store');
     Route::get('/{id}/edit','FrontController@edit')->name('edit');
     Route::put('/{id}/update','FrontController@update')->name('update');
     Route::delete('/{id}/delete','FrontController@delete')->name('delete');

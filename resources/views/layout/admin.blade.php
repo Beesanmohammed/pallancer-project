@@ -32,7 +32,6 @@
       <a class="sidebar-brand d-flex align-items-center justify-content-center 
      " href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Library Admin</div>
       </a>
@@ -62,6 +61,10 @@
 
         <a class="nav-link collapsed" href="{{asset('/admin/blog/index')}}" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <span>Blog's Management</span>
+        </a>
+
+        <a class="nav-link collapsed" href="{{asset('/homepage/usercontact')}}" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <span>Message's Management</span>
         </a>
       </li>
     </ul>
@@ -255,7 +258,7 @@
                 Activity Log
               </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+              <a class="dropdown-item" href="{{route('logout')}}" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Logout
               </a>
@@ -313,7 +316,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="{{ route('logout')}}">Logout</a>
         </div>
       </div>
     </div>

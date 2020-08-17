@@ -37,7 +37,7 @@ class BookController extends Controller
        $image= $request->file('image');
        $image_path= $image->store('/','books'); 
         }
-
+        
         $file_path=null;
         if($request->hasFile('file') && $request->file('file')->isValid() ){
        $file= $request->file('file');
@@ -73,7 +73,7 @@ class BookController extends Controller
             'discription'=>['required','string','min:3'],
             ]);  
 
-        $data=$request->except('image');
+        $data=$request->except('image','file');
         $books =Book::find($id);
         
         if($request->hasFile('image') && $request->file('image')->isValid() ){
@@ -92,10 +92,10 @@ class BookController extends Controller
             $file= $request->file('file');
 
             if($books->file && Storage::disk('books')->exists($books->file)){
-            $file_path= $file->store('/','books');
+            $file_path= $file->storeAs('/',basename($books->file),'books');
          }
             else{
-                $file_path[]= $file->store('/','books'); 
+                $file_path= $file->store('/','books'); 
             } 
         $data['file']=$file_path;
         }

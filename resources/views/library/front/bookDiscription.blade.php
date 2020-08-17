@@ -13,8 +13,7 @@
                     <br>
                     <div class="d-flex">
                         <div>
-                            <img style="border: 5px solid #555" height="170" width="200"
-                             src="{{asset('images/books/' .$bk->image)}}" alt="Avatar woman">
+                            <img style="border: 5px solid #555" height="170" width="200" src="{{asset('images/books/' .$bk->image)}}" alt="Avatar woman">
                         </div>
                         <div>
                             <p>Book Name : {{$bk->name}} </p>
@@ -26,9 +25,13 @@
                         <p>Book discription :{{$bk->discription}}</p>
                     </div>
 
-                       <a href="{{url('images/books/bookPDF/' .$bk->file)}}"> <button class="btn">
-                           <i class="fa fa-download"></i> Download</button> </a>
-                    </form>
+                    <a href="{{url('images/books/' .$bk->file)}}"> <button class="btn">
+                            <i class="fa fa-book"></i> Read Book</button> </a>
+                            </a>
+                            @if(Auth::check())
+                            <a href="{{url('images/books/' .$bk->file)}}" download> <button class="btn">
+                                    <i class="fa fa-download"></i> Download</button> </a>
+                            @endif
                 </div>
             </div>
         </div>

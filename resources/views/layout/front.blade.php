@@ -48,11 +48,14 @@
 			<div id="header-logo-1" class="text-center">
 				<img src="{{asset('assets/img//logo/logo.png')}}" alt="img">
 			</div>
+
+			
 			<ul id="menu">
 		
 				<li class="has-submenu">
-				        <li><a href="{{ route('homepage')}}">Homepage</a></li>				
-						<li><a href="#foot">Blog</a></li>
+						<li><a href="{{ route('homepage')}}">Homepage</a></li>	
+						<li><a href="{{ route('homepage')}}/#book">Add Book</a></li>			
+						<li><a href="{{ route ('homepage')}}/#foot">Our Blog's</a></li>
 						<li><a href="{{ route('contact')}}">Contact Us</a></li>
 						<li><a href="{{ route('aboutus')}}">About Us</a></li>
 						@if(Auth::check())
@@ -70,9 +73,13 @@
 		============================================= -->
 		<header id="site-header" class="not-stuck">
 			<div class="container">
+
 				<div class="row">
-					<div id="header-logo">
+				<div class="d-flex"> <div id="header-logo">
 						<img src="{{asset('assets/img//logo/logo.png')}}" alt="img">
+						<div>Knowlegment Library</div>
+						</div>
+
 					</div>
 
 					<div id="menu-burger" class="pull-right not-stuck">

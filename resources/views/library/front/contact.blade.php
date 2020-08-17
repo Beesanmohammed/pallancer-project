@@ -4,7 +4,7 @@
 <br>
 <br>
 <br>
-<br>
+<br><br>
 
 
 
@@ -15,10 +15,11 @@
     <input type="text" id="name" name="name" placeholder="Your name..">
 
     <label for="email">email</label>
-    <input type="text" id="email" name="name" placeholder="Your email name..">
+    <input type="text" id="email" name="email" placeholder="Your email name..">
 
     <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea id="subject" name="subject" placeholder="Write something.."
+     style="height:200px"></textarea>
     <div class="d-flex">
 
     <input type="submit" value="Submit">
